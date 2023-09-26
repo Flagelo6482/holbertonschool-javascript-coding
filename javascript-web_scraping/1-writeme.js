@@ -1,8 +1,8 @@
 #!/usr/bin/node
 //Argumento: archivo para escribir
-var path = process.argv[2];
+const path = process.argv[2];
 //Argumento: cadena para pasar al archivo
-var str = process.argv[3];
+const str = process.argv[3];
 
 const fs = require('fs');
 const util = require('util');
