@@ -2,11 +2,9 @@
 const request = require('request');
 const fs = require('fs');
 
-//URL
 const URL = process.argv[2];
-//file
-const file = process.argv[3];
 
+const file = process.argv[3];
 
 request.get(URL, (error, response, body) => {
   if (error) {
