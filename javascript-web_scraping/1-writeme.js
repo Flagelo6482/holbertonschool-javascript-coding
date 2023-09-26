@@ -7,7 +7,7 @@ const str = process.argv[3];
 const fs = require('fs');
 const util = require('util');
 
-fs.writeFile (path, str, 'utf8', (err) => {
+fs.writeFile(path, str, 'utf8', (err) => {
   if (err) {
     console.log(util.inspect(err, false, null, true));
   }
