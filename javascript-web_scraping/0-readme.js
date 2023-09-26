@@ -10,7 +10,7 @@ function readAndPrintFileContent (filePath) {
     }
     console.log(data);
   });
-};
+}
 
 const filePath = process.argv[2];
 readAndPrintFileContent(filePath);
