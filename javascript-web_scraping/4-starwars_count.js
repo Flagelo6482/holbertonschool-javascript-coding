@@ -1,17 +1,20 @@
 #!/usr/bin/node
+
 const request = require('request');
-
-const apiUrl = process.argv[2];
-const characterId = 18;
-
-request(apiUrl, (error, response, body) => {
-  if (error) {
-    console.error('Error:', error);
-  } else if (response.statusCode !== 200) {
-    console.error('Status:', response.statusCode);
+const url = process.argv[2];
+request.get(url, (err, respose, body) => {
+  if (err) {
+    console.log(err);
   } else {
     const films = JSON.parse(body).results;
-    const moviesWithWedge = films.filter(film => film.characters.includes(`https://swapi-api.hbtn.io/api/people/${characterId}/`));
-    console.log(moviesWithWedge.length);
+    let ct = 0;
+    for (const film of films) {
+      for (const character of film.characters) {
+        if (character.includes('18')) {
+          ct++;
+        }
+      }
+    }
+    console.log(ct);
   }
 });
